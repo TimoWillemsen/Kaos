@@ -25,19 +25,19 @@ class ApplicationTest {
         environment {
             config = MapApplicationConfig("kaos.reliability" to "100")
         }
-        client.get("/").apply {
+        client.get("/reliability").apply {
             assertEquals(HttpStatusCode.OK, status)
         }
-        client.get("/set-reliability/0").apply {
+        client.post("/reliability/0").apply {
             assertEquals(HttpStatusCode.Accepted, status)
         }
-        client.get("/").apply {
+        client.get("/reliability").apply {
             assertEquals(HttpStatusCode.InternalServerError, status)
         }
-        client.get("/set-reliability/100").apply {
+        client.post("/reliability/100").apply {
             assertEquals(HttpStatusCode.Accepted, status)
         }
-        client.get("/").apply {
+        client.get("/reliability").apply {
             assertEquals(HttpStatusCode.OK, status)
         }
     }

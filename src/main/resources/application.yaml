@@ -2,7 +2,7 @@ kaos:
   reliability: $KAOS_RELIABILITY
 ktor:
   deployment:
-    port: 8080
+    port: 8086
   application:
     modules:
       -com.twillemsen.ApplicationKt.module

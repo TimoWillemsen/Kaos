@@ -38,7 +38,7 @@ dependencies {
 ktor{
     docker{
         localImageName.set("kaos")
-        imageTag.set("0.0.1")
+        imageTag.set("0.0.2")
 
         externalRegistry.set(
             DockerImageRegistry.dockerHub(
